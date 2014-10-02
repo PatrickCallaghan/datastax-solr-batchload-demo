@@ -2,7 +2,7 @@
 
 Start by creating the schema
 
-    mvn clean compile exec:java -Dexec.mainClass="com.datastax.demo.SchemaSetupSingle"
+    mvn clean compile exec:java -Dexec.mainClass="com.datastax.demo.SchemaSetup"
 
 Within the project structure in 
 
