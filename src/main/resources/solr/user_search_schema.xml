@@ -1,0 +1,33 @@
+<schema name="user_search_address" version="1.1">
+  <types>
+  	<fieldType name="string" class="solr.TextField">
+		<analyzer>
+			<filter class="solr.ClassicFilterFactory"/>
+			<tokenizer class="solr.NGramTokenizerFactory" minGramSize="1" maxGramSize="1"/>
+		</analyzer>
+	</fieldType>		
+	<fieldType name="text" class="solr.TextField">
+	  		<analyzer>      		  	      		
+	    		<tokenizer class="solr.StandardTokenizerFactory"/>																					
+	  		</analyzer>
+		</fieldType>
+	<fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+  </types>
+  <fields>
+    <field name="user_id"  type="text" indexed="true"  stored="true"/>
+    <field name="first_name"  type="text" indexed="false"  stored="true"/>
+    <field name="middle_name"  type="text" indexed="false"  stored="true"/>
+    <field name="last_name"  type="text" indexed="false"  stored="true"/>
+    <field name="passport"  type="text" indexed="true"  stored="true"/>
+    <field name="drivers_license"  type="text" indexed="true"  stored="true"/>
+    <field name="street_address"  type="string" indexed="true"  stored="true"/>
+    <field name="post_code"  type="text" indexed="false"  stored="true"/>
+    <field name="county_name"  type="string" indexed="true"  stored="true"/>
+    <field name="gender"  type="text" indexed="false"  stored="true"/>
+    <field name="phone_number"  type="text" indexed="false"  stored="true"/>
+    <field name="email"  type="text" indexed="false"  stored="true"/>
+    <field name="country_code"  type="text" indexed="true"  stored="true"/>    
+  </fields>
+  <defaultSearchField>passport</defaultSearchField>
+  <uniqueKey>user_id</uniqueKey>  
+</schema>

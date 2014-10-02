@@ -1,0 +1,11 @@
+//Add the SolrConfig
+curl http://localhost:8983/solr/resource/datastax_patient_care_demo.users/solrconfig.xml --data-binary @solrconfig.xml -H 'Content-type:text/xml; charset=utf-8'
+
+//Add the Schema
+curl http://localhost:8983/solr/resource/datastax_patient_care_demo.users/schema.xml --data-binary @user_search_schema.xml -H 'Content-type:text/xml; charset=utf-8'
+
+//Create the Solr Core.
+curl "http://localhost:8983/solr/admin/cores?action=CREATE&name=datastax_patient_care_demo.users"
+
+//Connect to the Solr web app.
+http://localhost:8983/solr/
